@@ -3,6 +3,8 @@ import os
 from setuptools import setup
 from setuptools import find_packages
 
+from kotti_bootswatch_theme import bootswatch_names
+
 here = os.path.abspath(os.path.dirname(__file__))
 try:
     README = open(os.path.join(here, 'README.rst')).read()
@@ -51,7 +53,8 @@ setup(
             'kotti_bootswatch_theme = kotti_bootswatch_theme.fanstatic:library',
         ],
         'fanstatic.compilers': [
-            'bootstrapless = kotti_bootswatch_theme.fanstatic_compiler:BOOTSTRAP_LESS_COMPILER',
+            ('less_bootswatch_' + name + ' = kotti_bootswatch_theme.fanstatic_compiler:less_bootswatch_' + name)
+            for name in bootswatch_names
         ],
     },
     extras_require={},

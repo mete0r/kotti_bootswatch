@@ -5,9 +5,10 @@ Created on 2014-12-03
 :author: mete0r (mete0r@sarangbang.or.kr)
 """
 
-from pyramid.i18n import TranslationStringFactory
-
-_ = TranslationStringFactory('kotti_bootswatch_theme')
+bootswatch_names = ['amelia', 'cerulean', 'cosmo', 'cyborg', 'darkly',
+                    'flatly', 'journal', 'lumen', 'paper', 'readable',
+                    'sandstone', 'simplex', 'slate', 'spacelab',
+                    'superhero', 'united', 'yeti']
 
 
 def kotti_configure(settings):
@@ -24,21 +25,16 @@ def kotti_configure(settings):
 
     settings['pyramid.includes'] += ' kotti_bootswatch_theme'
 
-    import os.path
-    from .fanstatic_compiler import BOOTSTRAP_LESS_COMPILER
     theme = settings.get('kotti_bootswatch_theme.theme', 'custom')
-    theme_dir = os.path.join(os.path.dirname(__file__), 'static', 'bootswatch',
-                             theme)
-    BOOTSTRAP_LESS_COMPILER.include_path = theme_dir
     view_resources = ' '.join([
         'kotti_bootswatch_theme.fanstatic.bootswatch_' + theme,
-        'kotti_bootswatch_theme.fanstatic.kotti_override_base_css',
-        'kotti_bootswatch_theme.fanstatic.kotti_override_view_css',
+        'kotti_bootswatch_theme.fanstatic.kotti_override_bootswatch_' + theme + '_base_css',
+        'kotti_bootswatch_theme.fanstatic.kotti_override_bootswatch_' + theme + '_view_css',
     ])
     edit_resources = ' '.join([
         'kotti_bootswatch_theme.fanstatic.bootswatch_' + theme,
-        'kotti_bootswatch_theme.fanstatic.kotti_override_base_css',
-        'kotti_bootswatch_theme.fanstatic.kotti_override_edit_css',
+        'kotti_bootswatch_theme.fanstatic.kotti_override_bootswatch_' + theme + '_base_css',
+        'kotti_bootswatch_theme.fanstatic.kotti_override_bootswatch_' + theme + '_edit_css',
     ])
     settings['kotti.fanstatic.view_needed'] += ' ' + view_resources
     settings['kotti.fanstatic.edit_needed'] += ' ' + edit_resources
