@@ -12,7 +12,9 @@ for theme in $themes; do
 
     [ -d $bootswatch_theme_dir ] || echo $bootswatch_theme_dir not found
     mkdir -p $kotti_theme_dir
-    for component in base view edit upload; do
+    for src_path in $kotti_dir/*.less; do
+        src_file=`basename $src_path`
+        component=`echo $src_file | sed -e 's/[.]less$//g'`
         lessc --include-path="$bootswatch_theme_dir" "$kotti_dir/$component.less" > "$kotti_theme_dir/$component.css"
     done
 done
