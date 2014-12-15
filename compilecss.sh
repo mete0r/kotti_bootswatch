@@ -15,6 +15,4 @@ for theme in $themes; do
     for component in base view edit upload; do
         lessc --include-path="$bootswatch_theme_dir" "$override_dir/$component.less" > "$override_theme_dir/$component.css"
     done
-
-    tree $override_dir
 done
