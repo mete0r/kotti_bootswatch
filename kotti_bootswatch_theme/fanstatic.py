@@ -39,25 +39,16 @@ def overrides_callback(name):
     d = globals()
 
     basepath = 'kotti_override/' + name + '/'
-    compiler_name = 'less_bootswatch_' + name
 
     kotti_override_base_css = Resource(library, basepath + 'base.css',
-                                       source='kotti_override/base.less',
-                                       compiler=compiler_name,
                                        depends=[kotti_base_css])
     kotti_override_view_css = Resource(library, basepath + 'view.css',
-                                       source='kotti_override/view.less',
-                                       compiler=compiler_name,
                                        depends=[kotti_view_css,
                                                 kotti_override_base_css])
     kotti_override_edit_css = Resource(library, basepath + 'edit.css',
-                                       source='kotti_override/edit.less',
-                                       compiler=compiler_name,
                                        depends=[kotti_edit_css,
                                                 kotti_override_base_css])
     kotti_override_upload_css = Resource(library, basepath + 'upload.css',
-                                         source='kotti_override/upload.less',
-                                         compiler=compiler_name,
                                          depends=[kotti_upload_css,
                                                   kotti_override_base_css])
     kotti_override_css = Group([
