@@ -27,7 +27,7 @@ def supersede_resources(theme):
     bootstrap_path = 'bootswatch/' + theme + '/bootstrap.css'
     Resource(library, bootstrap_path, supersedes=[bootstrap_css])
 
-    basepath = 'kotti_override/' + theme + '/'
+    basepath = 'kotti/' + theme + '/'
     Resource(library, basepath + 'base.css', supersedes=[kotti_base_css])
     Resource(library, basepath + 'view.css', supersedes=[kotti_view_css])
     Resource(library, basepath + 'edit.css', supersedes=[kotti_edit_css])

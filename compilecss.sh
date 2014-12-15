@@ -7,12 +7,12 @@ static_dir=kotti_bootswatch_theme/static
 for theme in $themes; do
     echo $theme
     bootswatch_theme_dir="$static_dir/bootswatch/$theme"
-    override_dir="$static_dir/kotti_override"
-    override_theme_dir="$static_dir/kotti_override/$theme"
+    kotti_dir="$static_dir/kotti"
+    kotti_theme_dir="$static_dir/kotti/$theme"
 
     [ -d $bootswatch_theme_dir ] || echo $bootswatch_theme_dir not found
-    mkdir -p $override_theme_dir
+    mkdir -p $kotti_theme_dir
     for component in base view edit upload; do
-        lessc --include-path="$bootswatch_theme_dir" "$override_dir/$component.less" > "$override_theme_dir/$component.css"
+        lessc --include-path="$bootswatch_theme_dir" "$kotti_dir/$component.less" > "$kotti_theme_dir/$component.css"
     done
 done
