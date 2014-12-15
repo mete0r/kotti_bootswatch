@@ -18,9 +18,21 @@ Setup
 
 To enable the extension in your Kotti site, activate the configurator::
 
+    [app:kotti]
+
+    ...
+
     kotti.configurators =
         kotti_bootswatch_theme.kotti_configure
     kotti_bootswatch_theme.theme = darkly
+
+    ...
+
+    [filter:fanstatic]
+    use = egg:fanstatic#fanstatic
+    rollup = True
+
+    ...
 
 Development
 ===========
