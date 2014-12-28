@@ -1,0 +1,14 @@
+include CHANGES.rst
+include LICENSE.txt
+include bower.json
+include compilecss.sh
+include development.ini
+include i18n.sh
+include requirements.txt
+include rtd.txt
+include .bowerrc
+include .coveragerc
+recursive-include kotti_bootswatch/scaffolds/scaffold *
+recursive-include kotti_bootswatch/static/bootswatch *
+recursive-include kotti_bootswatch/static/kotti *
+global-exclude .*.sw? *.pyc
