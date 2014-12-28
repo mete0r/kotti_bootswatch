@@ -3,14 +3,10 @@ kotti_bootswatch
 
 bootswatch theme
 
-|build status|_
-
 `Find out more about Kotti`_
 
 Development happens at https://github.com/mete0r/kotti_bootswatch
 
-.. |build status| image:: https://secure.travis-ci.org/mete0r/kotti_bootswatch.png?branch=master
-.. _build status: http://travis-ci.org/mete0r/kotti_bootswatch
 .. _Find out more about Kotti: http://pypi.python.org/pypi/Kotti
 
 Setup
