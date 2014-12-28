@@ -34,6 +34,21 @@ To enable the extension in your Kotti site, activate the configurator::
 
     ...
 
+
+Theme generator
+===============
+
+You can generate bootswatch-based themes::
+
+    pcreate -s kotti_bootswatch mytheme
+    cd mytheme
+    sh quickstart.sh amelia
+
+Read generated README.rst for more information::
+
+    cat mytheme/README.rst
+
+
 Development
 ===========
 
