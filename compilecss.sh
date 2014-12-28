@@ -2,7 +2,7 @@
 
 themes='amelia cerulean cosmo cyborg darkly flatly journal lumen paper readable sandstone simplex slate spacelab superhero united yeti'
 
-static_dir=kotti_bootswatch_theme/static
+static_dir=kotti_bootswatch/static
 
 for theme in $themes; do
     echo $theme

@@ -1,2 +1,2 @@
 [run]
-omit = kotti_bootswatch_theme/tests/*
+omit = kotti_bootswatch/tests/*

@@ -8,9 +8,9 @@ def kotti_configure(settings):
     """ Add a line like this to you .ini file::
 
             kotti.configurators =
-                kotti_bootswatch_theme.kotti_configure
+                {{package}}.kotti_configure
 
-        to enable the ``kotti_bootswatch_theme`` add-on.
+        to enable the ``{{package}}`` add-on.
 
     :param settings: Kotti configuration dictionary.
     :type settings: dict

@@ -6,9 +6,9 @@
 #         ./i18n.sh
 
 # configuration
-DOMAIN="kotti_bootswatch_theme"
-SEARCH_PATH="kotti_bootswatch_theme"
-LOCALES_PATH="kotti_bootswatch_theme/locale"
+DOMAIN="kotti_bootswatch"
+SEARCH_PATH="kotti_bootswatch"
+LOCALES_PATH="kotti_bootswatch/locale"
 # end configuration
 
 # create locales folder if not exists

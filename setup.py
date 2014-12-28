@@ -21,9 +21,9 @@ install_requires = [
 
 
 setup(
-    name='kotti_bootswatch_theme',
+    name='kotti_bootswatch',
     version=version,
-    description="Add on for Kotti",
+    description="Kotti bootswatch theme / theme generator",
     long_description='\n\n'.join([README, CHANGES]),
     classifiers=[
         "Programming Language :: Python",
@@ -37,7 +37,7 @@ setup(
     ],
     author='Kotti developers',
     author_email='kotti@googlegroups.com',
-    url='https://github.com/mete0r/kotti_bootswatch_theme',
+    url='https://github.com/mete0r/kotti_bootswatch',
     keywords='kotti web cms wcms pylons pyramid sqlalchemy bootstrap',
     license="BSD-derived (http://www.repoze.org/LICENSE.txt)",
     packages=find_packages(),
@@ -48,10 +48,10 @@ setup(
     dependency_links=[],
     entry_points={
         'fanstatic.libraries': [
-            'kotti_bootswatch_theme = kotti_bootswatch_theme.fanstatic:library',
+            'kotti_bootswatch = kotti_bootswatch.fanstatic:library',
         ],
         'pyramid.scaffold': [
-            'kotti_bootswatch_theme = kotti_bootswatch_theme.scaffolds:ThemeTemplate',  # noqa
+            'kotti_bootswatch = kotti_bootswatch.scaffolds:ThemeTemplate',
         ],
     },
     extras_require={},

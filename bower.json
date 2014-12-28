@@ -1,16 +1,16 @@
 {
-  "name": "kotti_bootswatch_theme",
+  "name": "kotti_bootswatch",
   "version": "0.0.0",
   "authors": [
     "mete0r@sarangbang.or.kr"
   ],
-  "license": "Affero GPL v3 or above",
+  "license": "MIT",
   "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
-    "kotti_bootswatch_theme/static",
+    "kotti_bootswatch/static",
     "test",
     "tests"
   ],

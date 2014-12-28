@@ -4,4 +4,4 @@ History
 0.1 - unreleased
 ----------------
 
-- Create package with ``pcreate -s kotti kotti_bootswatch_theme``.
+- Create package with ``pcreate -s kotti kotti_bootswatch``.

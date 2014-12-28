@@ -18,7 +18,7 @@ from kotti.fanstatic import edit_css as kotti_edit_css
 from kotti.fanstatic import upload_css as kotti_upload_css
 
 
-library = Library("kotti_bootswatch_theme", "static")
+library = Library("kotti_bootswatch", "static")
 
 
 def supersede_resources(theme):

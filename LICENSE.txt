@@ -1,4 +1,4 @@
-kotti_bootswatch_theme is supplied under this license ("RPL", a BSD-derived license):
+kotti_bootswatch is supplied under this license ("RPL", a BSD-derived license):
 
   A copyright notice accompanies this license document that identifies
   the copyright holders.
