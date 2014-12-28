@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -e
+
+themes='amelia cerulean cosmo cyborg darkly flatly journal lumen paper readable sandstone simplex slate spacelab superhero united yeti'
+
+theme="$1"
+
+[ -n "$1" ] || {
+    echo "usage: $0 <base-theme>"
+    echo ""
+    echo "Available base themes:"
+    echo ""
+    echo "$themes"
+    exit 1
+}
+
+echo "* Cloning bootswatch '$theme' files into {{package}}/static/{{package}} ..."
+cp -r "bower_components/bootswatch/$theme" "{{package}}/static/{{package}}"
+cp -r "bower_components/bootswatch/fonts" "{{package}}/static/fonts"

@@ -1,0 +1,16 @@
+/** Put here CSS that should apply to both public and editor screens. **/
+@import "variables.less";
+
+#editor-bar {
+  /* We want the edit bar directly below the main navbar. */
+  margin-top: -@navbar-margin-bottom;
+}
+
+/* workflow states */
+.state-public {
+  color: @brand-success;
+}
+
+.state-private {
+  color: @brand-danger;
+}

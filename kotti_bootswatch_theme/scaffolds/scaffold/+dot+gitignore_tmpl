@@ -1,0 +1,10 @@
+*.egg-info
+*.pyc
+*.pyo
+.*.sw?
+bin
+bower_components
+include
+lib
+local
+{{package}}.db

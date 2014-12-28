@@ -21,7 +21,7 @@ install_requires = [
 
 
 setup(
-    name='kotti_bootswatch_theme',
+    name='{{project}}',
     version=version,
     description="Add on for Kotti",
     long_description='\n\n'.join([README, CHANGES]),
@@ -48,10 +48,7 @@ setup(
     dependency_links=[],
     entry_points={
         'fanstatic.libraries': [
-            'kotti_bootswatch_theme = kotti_bootswatch_theme.fanstatic:library',
-        ],
-        'pyramid.scaffold': [
-            'kotti_bootswatch_theme = kotti_bootswatch_theme.scaffolds:ThemeTemplate',  # noqa
+            '{{package}} = {{package}}.fanstatic:library',
         ],
     },
     extras_require={},

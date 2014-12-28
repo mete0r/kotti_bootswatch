@@ -1,0 +1,28 @@
+#!/bin/sh
+
+set -e
+
+[ -n "$1" ] || {
+    echo "usage: $0 <base-theme>"
+    echo ""
+    echo "To see available themes:"
+    echo ""
+    echo "sh gen-from-base-theme.sh"
+    exit 1
+}
+
+bower install
+
+sh gen-from-base-theme.sh $1
+
+sh compilecss.sh
+
+virtualenv .
+
+bin/pip install -r requirements.txt
+bin/python setup.py develop
+
+echo "----"
+echo "Setup completed. Now run server to see your themed site:"
+echo ""
+echo "    bin/pserve development.ini"

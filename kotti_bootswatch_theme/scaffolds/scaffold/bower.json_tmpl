@@ -1,0 +1,20 @@
+{
+  "name": "{{project}}",
+  "version": "0.0.0",
+  "authors": [
+    "mete0r@sarangbang.or.kr"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "{{package}}/static",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootswatch": "~3.2.0"
+  }
+}

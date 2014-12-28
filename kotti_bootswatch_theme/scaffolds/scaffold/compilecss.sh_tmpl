@@ -1,0 +1,42 @@
+#!/bin/sh
+
+set -e
+
+theme_dir="{{package}}/static/{{package}}"
+kotti_dir="{{package}}/static/kotti"
+
+error_exit() {
+    echo "$*"
+    exit 1
+}
+
+less_compile() {
+    echo "* Compiling $1 to $2 ..."
+    lessc $3 $1 > $2
+}
+
+compile_bootstrap_css() {
+    echo "* Compiling bootstrap css files:"
+    less_compile build.less "$theme_dir/bootstrap.css"
+}
+
+compile_kotti_css() {
+    echo "* Compiling kotti css files:"
+    local src_file
+    local component
+    local src_path
+    local dst_path
+    for src_path in $kotti_dir/*.less; do
+        src_file=`basename "$src_path"`
+        component=`echo "$src_file" | sed -e 's/[.]less$//g'`
+        src_path="$kotti_dir/$component.less"
+        dst_path="$kotti_dir/$component.css"
+        less_compile "$src_path" "$dst_path" --include-path="$theme_dir"
+    done
+}
+
+[ -d "$theme_dir" ] || error_exit "$theme_dir not found"
+[ -d "$kotti_dir" ] || error_exit "$kotti_dir not found"
+
+compile_bootstrap_css
+compile_kotti_css
