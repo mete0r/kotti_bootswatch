@@ -1,0 +1,15 @@
+include CHANGES.rst
+include LICENSE.txt
+include bower.json
+include quickstart.sh
+include gen-from-base-theme.sh
+include compilecss.sh
+include build.less
+include development.ini
+include i18n.sh
+include requirements.txt
+include rtd.txt
+include .bowerrc
+recursive-include {{package}}/static/{{package}} *
+recursive-include {{package}}/static/kotti *
+global-exclude .*.sw? *.pyc
