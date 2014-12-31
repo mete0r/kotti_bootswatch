@@ -15,9 +15,15 @@ less_compile() {
     lessc $3 $1 > $2
 }
 
+do_minify() {
+    echo "* Minifying $1 to $2 ..."
+    minify $1 > $2
+}
+
 compile_bootstrap_css() {
     echo "* Compiling bootstrap css files:"
     less_compile build.less "$theme_dir/bootstrap.css"
+    do_minify "$theme_dir/bootstrap.css" "$theme_dir/bootstrap.min.css"
 }
 
 compile_kotti_css() {
@@ -31,7 +37,9 @@ compile_kotti_css() {
         component=`echo "$src_file" | sed -e 's/[.]less$//g'`
         src_path="$kotti_dir/$component.less"
         dst_path="$kotti_dir/$component.css"
+        min_path="$kotti_dir/$component.min.css"
         less_compile "$src_path" "$dst_path" --include-path="$theme_dir"
+        do_minify "$dst_path" "$min_path"
     done
 }
 
