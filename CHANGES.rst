@@ -1,10 +1,10 @@
 History
 =======
 
-0.2.0 (unreleased)
+0.1.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Generate/use minified css files.
 
 
 0.1.0 (2014-12-29)
