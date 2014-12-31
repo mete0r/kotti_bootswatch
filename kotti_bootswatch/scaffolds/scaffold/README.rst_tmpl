@@ -5,8 +5,13 @@
 Requirement
 -----------
 
-* `bower`
-* `lessc`
+* `bower`_
+* `lessc`_
+* `minify`_
+
+.. _bower: https://www.npmjs.com/package/bower
+.. _lessc: https://www.npmjs.com/package/less
+.. _minify: https://www.npmjs.com/package/minify
 
 
 Quickstart
