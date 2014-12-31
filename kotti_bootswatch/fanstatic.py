@@ -25,10 +25,18 @@ def supersede_resources(theme):
     theme = str(theme)
 
     bootstrap_path = 'bootswatch/' + theme + '/bootstrap.css'
-    Resource(library, bootstrap_path, supersedes=[bootstrap_css])
+    minified_path = 'bootswatch/' + theme + '/bootstrap.min.css'
+    Resource(library, bootstrap_path, minified=minified_path,
+             supersedes=[bootstrap_css])
 
     basepath = 'kotti/' + theme + '/'
-    Resource(library, basepath + 'base.css', supersedes=[kotti_base_css])
-    Resource(library, basepath + 'view.css', supersedes=[kotti_view_css])
-    Resource(library, basepath + 'edit.css', supersedes=[kotti_edit_css])
-    Resource(library, basepath + 'upload.css', supersedes=[kotti_upload_css])
+    resource_map = {
+        'base': kotti_base_css,
+        'view': kotti_view_css,
+        'edit': kotti_edit_css,
+        'upload': kotti_upload_css
+    }
+    for key, kotti_css in resource_map.items():
+        Resource(library, basepath + key + '.css',
+                 minified=basepath + key + '.min.css',
+                 supersedes=[kotti_css])
