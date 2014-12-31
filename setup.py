@@ -35,7 +35,7 @@ setup(
         "Topic :: Internet :: WWW/HTTP :: WSGI :: Application",
         "License :: Repoze Public License",
     ],
-    author='Kotti developers',
+    author='mete0r',
     author_email='kotti@googlegroups.com',
     url='https://github.com/mete0r/kotti_bootswatch',
     keywords='kotti web cms wcms pylons pyramid sqlalchemy bootstrap',
