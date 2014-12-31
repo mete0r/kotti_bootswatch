@@ -1,0 +1,55 @@
+{{project}}: A kotti bootswatch theme
+=====================================
+
+
+Requirement
+-----------
+
+* `bower`_
+* `lessc`_
+* `minify`_
+
+.. _bower: https://www.npmjs.com/package/bower
+.. _lessc: https://www.npmjs.com/package/less
+.. _minify: https://www.npmjs.com/package/minify
+
+
+Quickstart
+----------
+
+For quickstart, run following command in the {{project}} directory::
+
+    sh quickstart <bootswatch-theme>
+
+Available `<bootswatch-theme>`::
+
+    amelia cerulean cosmo cyborg darkly flatly journal lumen paper readable
+    sandstone simplex slate spacelab superhero united yeti
+
+
+Manual
+------
+
+1. Install bootstrap/bootswatch via `bower`::
+
+    bower install
+
+2. Generate bootstrap theme less files in `{{package}}/static/{{package}}`::
+
+    sh gen-from-base-theme.sh <bootswatch-theme>
+
+3. Optionally, edit some bootstrap variables::
+
+    vim {{package}}/static/{{package}}/variables.less
+
+4. Compile bootstrap and kotti css files::
+
+    sh compilecss.sh
+
+5. Boot up themed demo site::
+
+    virtualenv .
+    . bin/activate
+    pip install -r requirements.txt
+    python setup.py develop
+    pserve development.ini

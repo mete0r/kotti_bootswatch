@@ -1,55 +1,44 @@
-{{project}}: A kotti bootswatch theme
-=====================================
+{{project}}
+***********
+
+A `Bootswatch`_ based theme for `Kotti`_.
+
+This theme supersede css files of the `js.bootstrap`_ and Kotti via
+`fanstatic`_'s `supersedes`_ and `rollup`_ mechanism.
+
+.. _Kotti: http://pypi.python.org/pypi/Kotti
+.. _Bootswatch: http://bootswatch.com/
+.. _js.bootstrap: https://pypi.python.org/pypi/js.bootstrap
+.. _fanstatic: http://www.fanstatic.org
+.. _supersedes: http://www.fanstatic.org/en/latest/api.html?highlight=supersedes#fanstatic.Resource
+.. _rollup: http://www.fanstatic.org/en/latest/configuration.html#rollup
 
 
-Requirement
------------
+Usage
+=====
 
-* `bower`_
-* `lessc`_
-* `minify`_
+To enable the extension in your Kotti site, activate the configurator::
 
-.. _bower: https://www.npmjs.com/package/bower
-.. _lessc: https://www.npmjs.com/package/less
-.. _minify: https://www.npmjs.com/package/minify
+    [app:kotti]
+
+    ...
+
+    kotti.configurators =
+        ...
+        {{package}}.kotti_configure  # enable this extension
+
+    ...
+
+    [filter:fanstatic]
+    use = egg:fanstatic#fanstatic
+
+    # fanstatic rollup should be enabled
+    rollup = True
+
+    ...
 
 
-Quickstart
-----------
+Developer
+=========
 
-For quickstart, run following command in the {{project}} directory::
-
-    sh quickstart <bootswatch-theme>
-
-Available `<bootswatch-theme>`::
-
-    amelia cerulean cosmo cyborg darkly flatly journal lumen paper readable
-    sandstone simplex slate spacelab superhero united yeti
-
-
-Manual
-------
-
-1. Install bootstrap/bootswatch via `bower`::
-
-    bower install
-
-2. Generate bootstrap theme less files in `{{package}}/static/{{package}}`::
-
-    sh gen-from-base-theme.sh <bootswatch-theme>
-
-3. Optionally, edit some bootstrap variables::
-
-    vim {{package}}/static/{{package}}/variables.less
-
-4. Compile bootstrap and kotti css files::
-
-    sh compilecss.sh
-
-5. Boot up themed demo site::
-
-    virtualenv .
-    . bin/activate
-    pip install -r requirements.txt
-    python setup.py develop
-    pserve development.ini
+See README.maintainer.rst

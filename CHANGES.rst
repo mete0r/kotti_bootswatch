@@ -5,6 +5,7 @@ History
 ------------------
 
 - Specify `minify` as a requirement in the generated README.rst
+- Generate separate README files for user/maintainer
 
 
 0.1.1 (2014-12-31)
