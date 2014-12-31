@@ -1,7 +1,7 @@
 History
 =======
 
-0.1.2 (unreleased)
+0.1.2 (2014-12-31)
 ------------------
 
 - Specify `minify` as a requirement in the generated README.rst
