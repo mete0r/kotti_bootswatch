@@ -5,14 +5,14 @@ FormEncode==1.2.6
 Mako==1.0.0
 MarkupSafe==0.23
 PasteDeploy==1.5.2
-Pillow==2.6.1
+Pillow==3.3.2
 Pygments==2.0.1
 SQLAlchemy==0.9.8
 Unidecode==0.04.16
 WebOb==1.4
 alembic==0.6.7
 argparse==1.2.2
-colander==1.0b1
+colander==1.7.0
 deform==2.0a2
 docopt==0.6.2
 fanstatic==1.0a5
